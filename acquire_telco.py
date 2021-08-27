@@ -27,3 +27,10 @@ JOIN payment_types ON payment_types.payment_type_id = customers.payment_type_id;
 
         # Return the dataframe to the calling code
         return df 
+
+def summarize_telco(df):
+    print("The Telco dataframe has a total of 28 columns and 7043 rows.")
+    print("___________________________________________________________")
+    print(df.info())
+    print("___________________________________________________________")
+    print(df.describe())
