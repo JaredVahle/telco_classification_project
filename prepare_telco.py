@@ -1,5 +1,6 @@
 import pandas as pd
-
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
 def clean_telco(df):
     
     # replaces all the missing values with 0 and since all values are numeric, we change the total charges type to float
