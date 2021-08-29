@@ -25,19 +25,8 @@
 - Im using the Telco churn dataset from the Codeup SQL database.
 - This dataset originally contained 27 columns and 7043 rows after all tables were joined together.
 - An example of the Telco churn dataset can be found [here](https://www.kaggle.com/blastchar/telco-customer-churn).
-- The random state for this project is (174) and is used thoughout the project.
 
 ## Data Dictionary
-### Joining Columns:
-- payment_type_id - used to join payment type information
-- internet_service_type_id - used to join internet service type information
-- contract_type_id - used to join contract type information
-### Custom Columns
-- addons - a column I created that will take the total of each of the columns below for every individual in the telco dataset. This column ranges from 0-6 adding one for each service.
-  - I added this column (addons) because these are all additional services, and are opt in this could potentially be a positive or negative driver of churn.
-- auto_pay - a column I created using the payment_type column that will split the four different payment types into two groups. auto_pay represented by "1" containing (Credit card, Bank Transfer), and non auto payment types represented by "0" containing (Electronic check, Mailed check).
-  - I added this column (auto_pay) because in my previous project I had found that weather or not a customer had autopay was a large driver of churn.
-## Cleaned Data Dictionary
 |Target|Datatype|Definition|
 |:-------|:--------|:----------|
 |churn|dtype('O')|Yes or no, if the customer churned|
