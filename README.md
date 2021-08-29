@@ -25,6 +25,7 @@
 - Im using the Telco churn dataset from the Codeup SQL database.
 - This dataset originally contained 27 columns and 7043 rows after all tables were joined together.
 - An example of the Telco churn dataset can be found [here](https://www.kaggle.com/blastchar/telco-customer-churn).
+- The random state for this project is (174) and is used thoughout the project.
 
 ## Data Dictionary
 ### Joining Columns:
@@ -34,32 +35,8 @@
 ### Custom Columns
 - addons - a column I created that will take the total of each of the columns below for every individual in the telco dataset. This column ranges from 0-6 adding one for each service.
   - I added this column (addons) because these are all additional services, and are opt in this could potentially be a positive or negative driver of churn.
-- auto_pay - a column I created using the payment_type column that will split the four different payment types into two groups. auto_pay represented by "1" containing (Credit card, Bank Transfer), and non auto payment types represented by "0" containing (Electronic check, Mailed check)
-### Additional Services
-- online_security - column indicating yes, no, or no internet service depending on the customers situation of having online security.
-- online_backup - column indicating yes, no, or no internet service depending on the customers situation of having online backup.
-- device_protection - column indicating yes, no, or no internet service depending on the customers situation of having device protection.
-- tech_support - column indicating yes, no, or no internet service depending on the customers situation of having tech support.
-- streaming_tv - column indicating yes, no, or no internet service depending on the customers situation of having tv streaming.
-- streaming_movies -column indicating yes, no, or no internet service depending on the customers situation of having movie streaming.
-### Customer Information
-- customer_id - A unique id given to each customer
-- gender - Catagorizing each customer as male or female.
-- senior_citizen - Catagorizing each customer depending on if they are a senior citizen.
-- partner - Yes, or no indicating weather the customer has a partner.
-- dependents - Yes, or no indicating weather the customer has dependents.
-- tenure - Gives a whole number of how many months a customer has recieved a telco service.
-### Account Information
-- phone_service - 
-- multiple_lines -
-- paperless_billing -
-- monthly_charges -
-- total_charges -
-- contract_type -
-- payment_type -
-- internet_service_type -
-### Target
-- churn - Indicates weather a customer has opted out of the telco services.
+- auto_pay - a column I created using the payment_type column that will split the four different payment types into two groups. auto_pay represented by "1" containing (Credit card, Bank Transfer), and non auto payment types represented by "0" containing (Electronic check, Mailed check).
+  - I added this column (auto_pay) because in my previous project I had found that weather or not a customer had autopay was a large driver of churn.
 ## Cleaned Data Dictionary
 |Target|Datatype|Definition|
 |:-------|:--------|:----------|
@@ -90,6 +67,15 @@
 |contract_type| dtype('O')|Month-to-month, year, or two-year contract|
 |internet_service_type| dtype('O')|DSL, Fiber Optic, or None|
 |payment_type| dtype('O')|Electronic check, mailed check, automatic bank transfer, or automatic credit card payment|
+
+### Custom Columns
+- addons - a column I created that will take the total of each of the columns below for every individual in the telco dataset. This column ranges from 0-6 adding one for each service.
+  - I added this column (addons) because these are all additional services, and are opt in this could potentially be a positive or negative driver of churn.
+- auto_pay - a column I created using the payment_type column that will split the four different payment types into two groups. auto_pay represented by "1" containing (Credit card, Bank Transfer), and non auto payment types represented by "0" containing (Electronic check, Mailed check).
+  - I added this column (auto_pay) because in my previous project I had found that weather or not a customer had autopay was a large driver of churn.
+
+## Hypotheses
+### Alpha
 - α = .05
 ### Initial hypothesis 1
 #### Null Hypothises
@@ -102,8 +88,50 @@
 #### Alternative Hypothisis
 - 
 ### Initial hypothesis 3
+- Is there any significant difference in churn in the add_ons column that I created.
 #### Null Hypothises
--
+- There is no significant difference 
 #### Alternative Hypothisis
 - 
 ## Executive Summary
+
+## Data Science Pipeline
+#### Planning
+- Make a README.md that will hold all of the project details including a data dictionary, key finding, initial hypotheses, and explain how my process can be replicated
+- Create a MVP, originally and work through the iterative process of making improvements to that MVP.
+- Define atleast 2 clear sets of null and alternative hypotheses set an alpha value.
+- Create two .py scripts for both acquire and prepare, in order to automate the collection and cleaning of the data.
+- Create a helper.py for any other functions I need implamented thoughout the pipeline.
+- Properly anotate my code as I run though the process, in order for the code to be easily understood, and document any decisions that were made when cleaning, creating new columns, or removing rows of data.
+#### Acquire
+- Create an acquire.py (acquire_telco.py) was the name of my py file.
+- Use that acquire_telco.py file to grab the data from the CodeUp SQL database and cache that file to a csv for ease of accessability.
+- Render the csv into a pandas dataframe on python.
+- Summarize the initial data and plot the distributions of individual variables.
+#### Prepare
+- Create a prepare.py (prepare_telco.py) was the name of my py file.
+- Clean the data as I see fit, handling the missing values and encoding values as necessary in order to give numeric values that will work with the models
+- There were 11 values with no current tenure, and I made the decision to remove those values. These customers have not payed their first bill, so there is no data on weather they are satisfied with the product.
+- Add new columns that might be useful in modeling, might need more information from the explore for incite into columns that once combined will drive churn.
+- I added two new columns (auto_pay - if payment type was automatic.),and (add_ons - A column that sums the six aditional services.)
+#### Explore
+- Awnser my initial hypotheses that was asked in my planning phase, and test those hypotheses using statistical tests, either accepting or rejecting the null hypothesis.
+- Continue using statistical testing and visualizations to discover variable relationships in the data, and attempt to understand "how the data works".
+- Summarize my conclusions giving clear awnsers to the questions I posed in the planning stage and summarize any takeaways that might be useful.
+#### Modeling and Evaluation
+- Train and evaluate multiple models comparing those models on different evaluation metrics.
+- Validate the models and choose the best model that was found in the validation phase.
+- Test the best model found and summarize the performance and document the results using a confusion matrix, predict methods, and classification reports.
+- Save the test predictions to a .csv file.
+#### Delivery
+- Deliver my refined jupyter notebook to the CodeUp data science team.
+- Summarize my findings, and build a narrative around the data, pulling from my knowledge on story telling.
+- Walk though the notebook explaining finding, documentation, and decisions that were made.
+- End with key takeaways and reccomendations.
+
+## User Defined functions
+
+## Project Reproduction
+- Random state or seed = **174**, and is used in my models and my split functions.
+- In replication making use of the user defined function, in cunjunction with  my documented process should give a good guide and presaved models, and helpful functions that will make the process faster.
+- 
