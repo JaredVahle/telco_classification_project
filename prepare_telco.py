@@ -79,8 +79,6 @@ def num_distributions(df):
             plt.show()
 
 def final_report_clean(df):
-    
-    customer_ids = df.customer_id
     # replaces all the missing values with 0 and since all values are numeric, we change the total charges type to float
     df.total_charges.replace(to_replace = {" ":"0"}, inplace = True)
     df.total_charges = df.total_charges.astype("float")
@@ -119,4 +117,4 @@ def final_report_clean(df):
                    "internet_service_type_id.1",
                    "payment_type_id.1",
                    "Unnamed: 0"],inplace = True)
-    return pd.concat([df, dummy_df], axis=1), customer_ids
+    return pd.concat([df, dummy_df], axis=1)
