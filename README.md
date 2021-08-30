@@ -76,34 +76,36 @@
 |payment_type| dtype('O')|Electronic check, mailed check, automatic bank transfer, or automatic credit card payment|
 
 ### Custom Columns
-- addons - a column I created that will take the total of each of the columns below for every individual in the telco dataset. This column ranges from 0-6 adding one for each service.
+- add_ons - a column I created that will take the total of each of the columns below for every individual in the telco dataset. This column ranges from 0-6 adding one for each service.
   - I added this column (addons) because these are all additional services, and are opt in this could potentially be a positive or negative driver of churn.
 - auto_pay - a column I created using the payment_type column that will split the four different payment types into two groups. auto_pay represented by "1" containing (Credit card, Bank Transfer), and non auto payment types represented by "0" containing (Electronic check, Mailed check).
   - I added this column (auto_pay) because in my previous project I had found that weather or not a customer had autopay was a large driver of churn.
+- streaming_movies_and_tv - a column I created using the streaming_movies, streaming_tv columns
+  - I combined these two columns so that the numbers range from 0-2, 0 being no streaming service, 1 being only one service, and 2 meaning that the customer had both streaming services.
 
 ## Hypotheses
 ### Alpha
 - α = .05
 
-### Initial hypothesis 1
-$H_O$ - The number of additional services and the likelyhood of churn are independent of eachother.
+### Hypothesis 1
+Null hypothesis - The number of additional services and the likelyhood of churn are independent of eachother.
 
-$H_A$ - The number of additional services and the likelyhood of churn are not independent of eachother.
+Alternative hypothesis - The number of additional services and the likelyhood of churn are not independent of eachother.
 
-### Initial hypothesis 2
-$H_O$ - Streaming television and churn are independent of eachother.
+### Hypothesis 2
+Null hypothesis - Streaming television and churn are independent of eachother.
 
-$H_A$ - Streaming television and churn are not independent of eachother.
+Alternative hypothesis - Streaming television and churn are not independent of eachother.
 
-### Initial hypothesis 3
-$H_O$ - Streaming movies and churn are independent of eachother.
+### Hypothesis 3
+Null hypothesis - Streaming movies and churn are independent of eachother.
 
-$H_A$ - Streaming movies and churn are not independent of eachother.
+Alternative hypothesis - Streaming movies and churn are not independent of eachother.
 
-### Initial hypothesis 4
-$H_O$ - Streaming movies and tv are independent on churn.
+### Hypothesis 4
+Null hypothesis - Streaming movies and tv are independent on churn.
 
-$H_A$ - Streaming movies and tv are not independent of churn.
+Alternative hypothesis - Streaming movies and tv are not independent of churn.
 
 ## Executive Summary
 
