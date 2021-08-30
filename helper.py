@@ -35,7 +35,7 @@ def get_final_report(model, cashe = False):
         # gets a new dataframe so we can grab the customer id
         df = get_telco_data()
         # only difference from original clean is that we leave customer id
-        final_report_clean(df)
+        df = final_report_clean(df)
         remove_unwanted_values(df)
         train,validate,test = train_validate_test_split(df,target = "churn",seed = 174)
         # make a final report dataframe that will contain customer id, prediction of churn, and our models prediction
