@@ -105,8 +105,7 @@ def final_report_clean(df):
     # adding a column that sums the additional services and gives a total from (0-6)
     df["add_ons"] =  df.online_security + df.online_backup + df.device_protection + df.tech_support + df.streaming_tv + df.streaming_movies
     # dropping columns that are duplicated by the dummy variables, the customer id, and id's that connected the different tables from sql
-    df.drop(columns = ["customer_id",
-                       "gender",
+    df.drop(columns = ["gender",
                        "payment_type",
                        "internet_service_type", 
                        "contract_type",

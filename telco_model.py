@@ -3,6 +3,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
 
 def baseline_acc(X,y, strategy = "most_frequent",random_state = 174):
     # generates a baseline model using most frequent, since there are only two outcomes we are predicting.
@@ -18,9 +19,7 @@ def tree_model(X,y,max_depth = 5, criterion = "gini", splitter = "best", random_
     dt_model.fit(X,y)
     y_pred = dt_model.predict(X)
     print(f"This decision tree models accuracy score is: {dt_model.score(X,y):.3%}")
-    print("")
-    print(classification_report(y,y_pred))
-    return model,y_pred
+    return dt_model,y_pred
 
 def rand_forest(X,y, n_estimators = 30, criterion = "gini",max_depth = 9, random_state = 174, min_samples_leaf = 3):
     rf_model = RandomForestClassifier(
@@ -32,8 +31,6 @@ def rand_forest(X,y, n_estimators = 30, criterion = "gini",max_depth = 9, random
     rf_model.fit(X,y)
     y_pred = rf_model.predict(X)
     print(f"This Random Forest models accuracy score is: {rf_model.score(X,y):.3%}")
-    print("")
-    print(classification_report(y,y_pred))
     return rf_model,y_pred
 
 def knneighbors(X,y,n_neighbors = 5, weights = "uniform",leaf_size = 10,p = 2):
@@ -45,6 +42,4 @@ def knneighbors(X,y,n_neighbors = 5, weights = "uniform",leaf_size = 10,p = 2):
     knn_model.fit(X,y)
     y_pred = knn_model.predict(X)
     print(f"This K Nearest Neighbor models accuracy score is: {knn_model.score(X,y):.3%}")
-    print("")
-    print(classification_report(y,y_pred))
     return knn_model,y_pred
