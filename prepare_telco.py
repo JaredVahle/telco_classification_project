@@ -29,6 +29,7 @@ def clean_telco(df):
     # adding a column that sums the additional services and gives a total from (0-6)
     df["add_ons"] =  df.online_security + df.online_backup + df.device_protection + df.tech_support + df.streaming_tv + df.streaming_movies
     # dropping columns that are duplicated by the dummy variables, the customer id, and id's that connected the different tables from sql
+    df["streaming_movies_and_tv"] = df.streaming_tv + df.streaming_movies
     df.drop(columns = ["customer_id",
                        "gender",
                        "payment_type",
