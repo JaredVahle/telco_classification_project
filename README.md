@@ -66,22 +66,27 @@
 ## Hypotheses
 ### Alpha
 - α = .05
+
 ### Initial hypothesis 1
-#### Null Hypothises
--
-#### Alternative Hypothisis
-- 
+$H_O$ - The number of additional services and the likelyhood of churn are independent of eachother.
+
+$H_A$ - The number of additional services and the likelyhood of churn are not independent of eachother.
+
 ### Initial hypothesis 2
-#### Null Hypothises
--
-#### Alternative Hypothisis
-- 
+$H_O$ - Streaming television and churn are independent of eachother.
+
+$H_A$ - Streaming television and churn are not independent of eachother.
+
 ### Initial hypothesis 3
-- Is there any significant difference in churn in the add_ons column that I created.
-#### Null Hypothises
-- There is no significant difference 
-#### Alternative Hypothisis
-- 
+$H_O$ - Streaming movies and churn are independent of eachother.
+
+$H_A$ - Streaming movies and churn are not independent of eachother.
+
+### Initial hypothesis 4
+$H_O$ - Streaming movies and tv are independent on churn.
+
+$H_A$ - Streaming movies and tv are not independent of churn.
+
 ## Executive Summary
 
 ## Data Science Pipeline
@@ -118,9 +123,22 @@
 - Walk though the notebook explaining finding, documentation, and decisions that were made.
 - End with key takeaways and reccomendations.
 
-## User Defined functions
+## Modules
+
+#### acquire_telco.py
+- Acquires the data from the CodeUp SQL database and puts the table into a pandas dataframe
+#### prepare_telco.py
+- Cleans my data and gets it ready for use in modeling and explore.
+#### helper.py
+- Contains any function that would help me thoughout the process.
+#### explore.py
+- Contains functions that I used to help visualize the data.
+#### telco_model.py
+- Contains all of the models I will use for my final project.
+- I used specifications on the function that I found had high accuracy scores on my validation data.
 
 ## Project Reproduction
 - Random state or seed = **174**, and is used in my models and my split functions.
 - In replication making use of the user defined function, in cunjunction with  my documented process should give a good guide and presaved models, and helpful functions that will make the process faster.
-- 
+- Create and use your own env file that connects you to the sql database.
+- Run the telco_classification_project_final
