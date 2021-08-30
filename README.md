@@ -1,5 +1,23 @@
 # Telco Classification Project
 
+## Executive Summary
+
+##### We found the leading 5 drivers of churn:
+- Month-to-month contract type
+- Fiber optics internet service type
+- Electronic check payment type
+- Tenure
+- Two year contract type
+
+##### We investigated streaming services and additional services.
+- Our streaming services had a higher rate of churn then our normal churn rate indicating some kind of customer dissatisfaction with the service.
+- We also found that our churn rate for additional services had higher churn rates in those that had 1-2 additional services and much lower churn rates in customers with 4-6.
+- This indicates we need further inspection into the 6 additional columns.
+
+##### For our modeling we used a random forest model.
+- I was able to get an accuracy of ~80.5%
+- This model is more than 7 points higher than our baseline model and can be extreamly helpful in the future.
+
 ## Project Description
 - I will be running the Telco data through the data science pipeline, implementing both statistical modeling, and machine learning models to help indicate drivers of churn and build a model to beat baseline accuracy.
 
@@ -142,3 +160,29 @@ $H_A$ - Streaming movies and tv are not independent of churn.
 - In replication making use of the user defined function, in cunjunction with  my documented process should give a good guide and presaved models, and helpful functions that will make the process faster.
 - Create and use your own env file that connects you to the sql database.
 - Run the telco_classification_project_final
+
+## Summary
+
+### Key takeaways
+top 5 churn predictors
+- Month-to-month contract type
+- Fiber optics internet service type
+- Electronic check payment type
+- Tenure
+- Two year contract type
+
+### Model takeaways
+- The best model for accuracy was my decision tree model with an accuracy score of 80.67% on our test data.
+- These are the model criteria that I used (n_estimators = 30, criterion = "gini",max_depth = 9, random_state = 174, min_samples_leaf = 3)
+
+### Recommendations
+- Although streaming was not the greatest indicator of churn I would still recommend further evaluation, and survaying of customers that had streaming services to gather their responses on why they churned.
+- Offering some kind of incentive to bundle the streaming services at a small discount or improving on those services might lower churn.
+- Investigate why customers are churning that have the fiber optics plan, is the price to high or is there some other factor causing it.
+- Incentivise payment types other then electronic checks, in order to increase customer retention.
+
+### Moving forward
+If given more time
+- I would adjust hyperperamaters and look for more features in the data, trying to find links between churn and multiple columns.
+- I would also have a team focus on survaying customer complaints to find cheap fixes for any reoccuring drivers of churn.
+- Additional effort in discovering the reason for the variations in churn for our add_ons column and discovering reasons for this data could give us actions we could use moving forward.
