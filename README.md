@@ -107,8 +107,6 @@ Null hypothesis - Streaming movies and tv are independent on churn.
 
 Alternative hypothesis - Streaming movies and tv are not independent of churn.
 
-## Executive Summary
-
 ## Data Science Pipeline
 #### Planning
 - Make a README.md that will hold all of the project details including a data dictionary, key finding, initial hypotheses, and explain how my process can be replicated
