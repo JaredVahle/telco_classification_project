@@ -9,9 +9,9 @@
 - Tenure
 - Two year contract type
 
-##### We investigated streaming services and additional services.
+##### I investigated streaming services and additional services.
 - Our streaming services had a higher rate of churn then our normal churn rate indicating some kind of customer dissatisfaction with the service.
-- We also found that our churn rate for additional services had higher churn rates in those that had 1-2 additional services and much lower churn rates in customers with 4-6.
+- I also found that our churn rate for additional services had higher churn rates in those that had 1-2 additional services and much lower churn rates in customers with 4-6.
 - This indicates we need further inspection into the 6 additional columns.
 
 ##### For our modeling we used a random forest model.
