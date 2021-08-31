@@ -3,7 +3,6 @@ from sklearn.metrics import confusion_matrix, classification_report
 
 def cmatrix(y_true, y_pred):
     '''
-    CREDIT TO ANNA VU
     Takes in true and predicted values to create a confusion matrix,
     then ouputs dictionary holding the true pos, true, neg, false pos,
     and false neg rates discerned from the matrix
@@ -31,7 +30,7 @@ def cmatrix(y_true, y_pred):
 
 def model_report(y_true, y_pred):
     '''
-    CREDIT TO ANNA VU
+    CREDIT TO RAY
     Takes in true and predicted values to create classificant report
     dictionary and uses cmatrix function to obtain positive and
     negative prediction rates, prints out table containing all metrics

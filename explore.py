@@ -201,6 +201,10 @@ def plot_swarm_grid_with_color(train, target, cat_vars, quant_vars):
         plt.show()
 
 def telco_churn_heatmap(df):
+    '''
+    Rights to anna vu
+    Makes a heatmap of the data
+    '''
     plt.figure(figsize=(8,12))
     churn_heatmap = sns.heatmap(df.corr()[["churn"]].sort_values(by = "churn",ascending = False),vmin = -.5,vmax = .5, annot = True, cmap = "plasma")
     churn_heatmap.set_title("Features Correlation with Churn")
